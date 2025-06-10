@@ -216,6 +216,7 @@ resDat <- data.frame(res@listData) %>% mutate(ensembl_gene_id = rownames(res)) %
 ```
 
 ### top 50 genes diff expressed in BMP4 vs ctr
+#### indiv counts
 ```{r top 50 BMP4, fig.height=4, fig.width=6}
 colCond <- c("#213782","grey","#822145")
 names(colCond) <- c("BMP4","ctr","HGF")
@@ -235,6 +236,7 @@ for(ID in topGenesID){
 }
 ```
 
+#### heatmap
 ```{r top 50 BMP4 heatmap, fig.height=14, fig.width=8}
 topGenes <- head(order(res$padj),50)
 #topGenes <- resDat$ensembl_gene_id[which(resDat$padj < 0.01)]
@@ -257,7 +259,23 @@ pheatmap(mat, annotation_col = anno, annotation_colors = ann_colors, scale = "ro
          labels_row = namesDat$hgnc_symbol, color = heat_colors)
 ```
 
+#### vulcano
+```{r, fig.height=10, fig.width=13}
+res$symbol <- resDat$hgnc_symbol
+EnhancedVolcano(res,
+    lab = res$symbol,
+    x = 'log2FoldChange',
+    y = 'pvalue',
+    xlim = c(-10, 10),
+    #ylim = c(0,50),
+    pCutoff = 10e-05,
+    FCcutoff = 1,
+    title = "DeSEQ2 results",
+    subtitle = bquote(italic("BMP4 vs ctr")))
+```
+
 ### plot expression of sel genes
+#### indiv counts
 ```{r sel genes, fig.height=4, fig.width=6}
 
 sel_genes <- c("ENSG00000019991", "ENSG00000125378", "ENSG00000107779", "ENSG00000138696", "ENSG00000105976", "ENSG00000282046", "ENSG00000180875")
@@ -269,7 +287,7 @@ for(ID in sel_genes){
 }
 ```
 
-
+#### heatmap
 ```{r sel genes heatmap, fig.height=7, fig.width=6}
 
 ## selected genes
@@ -286,25 +304,13 @@ pheatmap(mat, annotation_col = anno, annotation_colors = ann_colors, scale = "ro
 
 ```
 
-```{r, fig.height=10, fig.width=13}
-res$symbol <- resDat$hgnc_symbol
-EnhancedVolcano(res,
-    lab = res$symbol,
-    x = 'log2FoldChange',
-    y = 'pvalue',
-    xlim = c(-10, 10),
-    #ylim = c(0,50),
-    pCutoff = 10e-05,
-    FCcutoff = 1,
-    title = "DeSEQ2 results",
-    subtitle = bquote(italic("BMP4 vs ctr")))
-```
 
 ```{r}
 hist(res$pvalue[res$baseMean > 1], breaks = 0:20/20,
      col = "grey50", border = "white")
 ```
 
+### pathway analysis
 ```{r fig.height=5, fig.width=10, eval=FALSE}
 
 rankedGenes <- resDat %>%
@@ -389,7 +395,8 @@ resDat <- data.frame(res@listData) %>% mutate(ensembl_gene_id = rownames(res)) %
   left_join(., G_list, by= "ensembl_gene_id")
 ```
 
-## top 50 genes diff expressed in HGF vs ctr
+### top 50 genes diff expressed in HGF vs ctr
+#### indiv counts
 ```{r, fig.height=4, fig.width=6}
 colCond <- c("#213782","grey","#822145")
 names(colCond) <- c("BMP4","ctr","HGF")
@@ -409,6 +416,7 @@ for(ID in topGenesID){
 }
 ```
 
+####heatmap
 ```{r fig.height=12, fig.width=6}
 topGenes <- head(order(res$padj),50)
 #topGenes <- resDat$ensembl_gene_id[which(resDat$padj < 0.01)]
@@ -431,6 +439,7 @@ pheatmap(mat, annotation_col = anno, annotation_colors = ann_colors, scale = "ro
          labels_row = namesDat$hgnc_symbol, color = heat_colors)
 ```
 
+#### vulcano
 ```{r, fig.height=10, fig.width=13}
 res$symbol <- resDat$hgnc_symbol
 EnhancedVolcano(res,
