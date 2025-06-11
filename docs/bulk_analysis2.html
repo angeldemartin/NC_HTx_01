@@ -541,15 +541,15 @@ data
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinNCHTx01treeb4c63e7c412a08c8b3dc4bccc0498c6119eb56abtargetblankb4c63e7a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinNCHTx01treed7af3ec5bb2fe83194eec26f8607c48a824764fbtargetblankd7af3eca">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/angeldemartin/NC_HTx_01/tree/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab" target="_blank">b4c63e7</a>
+<a href="https://github.com/angeldemartin/NC_HTx_01/tree/d7af3ec5bb2fe83194eec26f8607c48a824764fb" target="_blank">d7af3ec</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinNCHTx01treeb4c63e7c412a08c8b3dc4bccc0498c6119eb56abtargetblankb4c63e7a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomangeldemartinNCHTx01treed7af3ec5bb2fe83194eec26f8607c48a824764fbtargetblankd7af3eca"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -559,7 +559,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/angeldemartin/NC_HTx_01/tree/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab" target="_blank">b4c63e7</a>.
+<a href="https://github.com/angeldemartin/NC_HTx_01/tree/d7af3ec5bb2fe83194eec26f8607c48a824764fb" target="_blank">d7af3ec</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -625,6 +625,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/angeldemartin/NC_HTx_01/blob/d7af3ec5bb2fe83194eec26f8607c48a824764fb/analysis/bulk_analysis2.Rmd" target="_blank">d7af3ec</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2025-06-10
+</td>
+<td>
+june10.1
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/angeldemartin/NC_HTx_01/d7af3ec5bb2fe83194eec26f8607c48a824764fb/docs/bulk_analysis2.html" target="_blank">d7af3ec</a>
+</td>
+<td>
+angeldemartin
+</td>
+<td>
+2025-06-10
+</td>
+<td>
+june10.1
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1153,11 +1187,8 @@ G_list &lt;- getBM(attributes=c(&#39;hgnc_symbol&#39;, &#39;ensembl_gene_id&#39;
 
 resDat &lt;- data.frame(res@listData) %&gt;% mutate(ensembl_gene_id = rownames(res)) %&gt;% 
   left_join(., G_list, by= &quot;ensembl_gene_id&quot;)</code></pre>
-<div id="top-50-genes-diff-expressed-in-bmp4-vs-ctr"
-class="section level3">
-<h3>top 50 genes diff expressed in BMP4 vs ctr</h3>
-<div id="indiv-counts" class="section level4">
-<h4>indiv counts</h4>
+<div id="top-50-indiv-counts" class="section level3">
+<h3>top 50 indiv counts</h3>
 <pre class="r"><code>colCond &lt;- c(&quot;#213782&quot;,&quot;grey&quot;,&quot;#822145&quot;)
 names(colCond) &lt;- c(&quot;BMP4&quot;,&quot;ctr&quot;,&quot;HGF&quot;)
 
@@ -3075,8 +3106,8 @@ angeldemartin
 </div>
 </div>
 </div>
-<div id="heatmap" class="section level4">
-<h4>heatmap</h4>
+<div id="top-50-heatmap" class="section level3">
+<h3>top 50 heatmap</h3>
 <pre class="r"><code>topGenes &lt;- head(order(res$padj),50)
 #topGenes &lt;- resDat$ensembl_gene_id[which(resDat$padj &lt; 0.01)]
 
@@ -3135,8 +3166,8 @@ angeldemartin
 </div>
 </div>
 </div>
-<div id="vulcano" class="section level4">
-<h4>vulcano</h4>
+<div id="vulcano" class="section level3">
+<h3>vulcano</h3>
 <pre class="r"><code>res$symbol &lt;- resDat$hgnc_symbol
 EnhancedVolcano(res,
     lab = res$symbol,
@@ -3148,50 +3179,13 @@ EnhancedVolcano(res,
     FCcutoff = 1,
     title = &quot;DeSEQ2 results&quot;,
     subtitle = bquote(italic(&quot;BMP4 vs ctr&quot;)))</code></pre>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-6-1.png" width="1248" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
-Past versions of unnamed-chunk-6-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-6-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-6-1.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
+<p><img src="figure/bulk_analysis2.Rmd/vulcano%20BMP4-1.png" width="1248" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-</div>
-</div>
-<div id="plot-expression-of-sel-genes" class="section level3">
-<h3>plot expression of sel genes</h3>
-<div id="indiv-counts-1" class="section level4">
-<h4>indiv counts</h4>
+<div id="plot-expression-of-sel-genes" class="section level2">
+<h2>plot expression of sel genes</h2>
+<div id="indiv-counts" class="section level3">
+<h3>indiv counts</h3>
 <pre class="r"><code>sel_genes &lt;- c(&quot;ENSG00000019991&quot;, &quot;ENSG00000125378&quot;, &quot;ENSG00000107779&quot;, &quot;ENSG00000138696&quot;, &quot;ENSG00000105976&quot;, &quot;ENSG00000282046&quot;, &quot;ENSG00000180875&quot;)
 
 for(ID in sel_genes){
@@ -3466,8 +3460,8 @@ angeldemartin
 </div>
 </div>
 </div>
-<div id="heatmap-1" class="section level4">
-<h4>heatmap</h4>
+<div id="heatmap" class="section level3">
+<h3>heatmap</h3>
 <pre class="r"><code>## selected genes
 mat  &lt;- assay(rld)[ sel_genes, ]
 namesDat &lt;- data.frame(ensembl_gene_id = rownames(mat)) %&gt;%
@@ -3519,13 +3513,13 @@ angeldemartin
 </div>
 <pre class="r"><code>hist(res$pvalue[res$baseMean &gt; 1], breaks = 0:20/20,
      col = &quot;grey50&quot;, border = &quot;white&quot;)</code></pre>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-7-1">
-Past versions of unnamed-chunk-7-1.png
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
 </button>
 </p>
-<div id="fig-unnamed-chunk-7-1" class="collapse">
+<div id="fig-unnamed-chunk-6-1" class="collapse">
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
 <thead>
@@ -3544,7 +3538,7 @@ Date
 <tbody>
 <tr>
 <td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-7-1.png" target="_blank">b4c63e7</a>
+<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-6-1.png" target="_blank">b4c63e7</a>
 </td>
 <td>
 angeldemartin
@@ -3558,7 +3552,6 @@ angeldemartin
 </div>
 </div>
 </div>
-</div>
 <div id="pathway-analysis" class="section level3">
 <h3>pathway analysis</h3>
 <pre class="r"><code>rankedGenes &lt;- resDat %&gt;%
@@ -3567,19 +3560,20 @@ angeldemartin
   arrange(desc(rank)) %&gt;%
   pull(rank, ensembl_gene_id)
 
-head(rankedGenes)
-
-rankedGenes &lt;- resDat %&gt;%
+head(rankedGenes)</code></pre>
+<pre><code>ENSG00000011114 ENSG00000177370 ENSG00000168140 ENSG00000281216 ENSG00000157881 ENSG00000288825 
+       24.04689        23.65639        23.45671        23.19196        23.16798        23.06201 </code></pre>
+<pre class="r"><code>rankedGenes &lt;- resDat %&gt;%
   filter(!is.na(ensembl_gene_id)) %&gt;%
   mutate(rank = -log10({pvalue}) * sign({log2FoldChange})) %&gt;%
   filter(!is.na(rank)) %&gt;% 
   arrange(desc(rank)) %&gt;%
   pull(rank, ensembl_gene_id)
 
-head(rankedGenes)
-
-
-term2gene &lt;- msigdbr(species = &quot;Homo sapiens&quot;, category = &quot;H&quot;) %&gt;% 
+head(rankedGenes)</code></pre>
+<pre><code>ENSG00000011114 ENSG00000177370 ENSG00000168140 ENSG00000281216 ENSG00000157881 ENSG00000288825 
+       9.966637        9.668158        9.517127        9.318928        9.301135        9.222436 </code></pre>
+<pre class="r"><code>term2gene &lt;- msigdbr(species = &quot;Homo sapiens&quot;, category = &quot;H&quot;) %&gt;% 
   dplyr::select(gs_name, ensembl_gene)
 term2name &lt;- msigdbr(species = &quot;Homo sapiens&quot;, category = &quot;H&quot;) %&gt;% 
   dplyr::select(gs_name, gs_description) %&gt;% 
@@ -3599,12 +3593,23 @@ as_tibble(gseaRes) %&gt;%
   top_n(10, wt=-p.adjust) %&gt;% 
   dplyr::select(-core_enrichment) %&gt;%
   mutate(across(c(&quot;enrichmentScore&quot;, &quot;NES&quot;), round, digits=3)) %&gt;% 
-  mutate(across(c(&quot;pvalue&quot;, &quot;p.adjust&quot;, &quot;qvalue&quot;), scales::scientific))
-
-
-dotplot(gseaRes, showCategory=5, split=&quot;.sign&quot;) + facet_grid(.~.sign)
-
-selGODat &lt;- gseaResDat %&gt;% 
+  mutate(across(c(&quot;pvalue&quot;, &quot;p.adjust&quot;, &quot;qvalue&quot;), scales::scientific))</code></pre>
+<pre><code># A tibble: 10 × 10
+   ID            Description setSize enrichmentScore   NES pvalue p.adjust qvalue  rank leading_edge
+   &lt;chr&gt;         &lt;chr&gt;         &lt;int&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;       
+ 1 HALLMARK_TGF… Genes up-r…      53          -0.902 -2.56 9.21e… 1.15e-04 8.97e…   180 tags=13%, l…
+ 2 HALLMARK_XEN… Genes enco…     170          -0.755 -2.50 4.58e… 7.64e-05 5.95e…   432 tags=5%, li…
+ 3 HALLMARK_EPI… Genes defi…     197          -0.704 -2.38 6.14e… 6.14e-04 4.79e…   770 tags=10%, l…
+ 4 HALLMARK_EST… Genes defi…     177          -0.667 -2.22 6.24e… 3.47e-02 2.70e…   831 tags=8%, li…
+ 5 HALLMARK_KRA… Genes up-r…     181          -0.658 -2.19 1.05e… 5.24e-02 4.08e…   432 tags=4%, li…
+ 6 HALLMARK_TNF… Genes regu…     191          -0.614 -2.06 4.48e… 2.80e-02 2.18e…   331 tags=3%, li…
+ 7 HALLMARK_E2F… Genes enco…     199           0.506  1.90 1.01e… 5.03e-05 3.91e…  3327 tags=45%, l…
+ 8 HALLMARK_G2M… Genes invo…     196           0.488  1.84 4.30e… 7.64e-05 5.95e…  4481 tags=46%, l…
+ 9 HALLMARK_INT… Genes up-r…     176           0.415  1.54 2.96e… 2.47e-02 1.92e…  2770 tags=28%, l…
+10 HALLMARK_INF… Genes defi…     161           0.408  1.50 3.69e… 2.64e-02 2.05e…  3128 tags=29%, l…</code></pre>
+<pre class="r"><code>dotplot(gseaRes, showCategory=5, split=&quot;.sign&quot;) + facet_grid(.~.sign)</code></pre>
+<p><img src="figure/bulk_analysis2.Rmd/pathway%20anaysis-1.png" width="960" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>selGODat &lt;- gseaResDat %&gt;% 
   arrange(desc(abs(NES))) %&gt;% 
   top_n(10, wt=-p.adjust) %&gt;% 
   mutate(qscore=-log(p.adjust, base=10)) %&gt;% 
@@ -3622,6 +3627,7 @@ p &lt;- ggbarplot(selGODat, x = &quot;ID&quot;, y = &quot;qscore&quot;,
           ) + 
   rotate()
 p</code></pre>
+<p><img src="figure/bulk_analysis2.Rmd/pathway%20anaysis-2.png" width="960" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="diff-expressed-in-hgf-vs-ctr" class="section level2">
@@ -3656,11 +3662,8 @@ G_list &lt;- getBM(attributes=c(&#39;hgnc_symbol&#39;, &#39;ensembl_gene_id&#39;
 
 resDat &lt;- data.frame(res@listData) %&gt;% mutate(ensembl_gene_id = rownames(res)) %&gt;% 
   left_join(., G_list, by= &quot;ensembl_gene_id&quot;)</code></pre>
-<div id="top-50-genes-diff-expressed-in-hgf-vs-ctr"
-class="section level3">
-<h3>top 50 genes diff expressed in HGF vs ctr</h3>
-<div id="indiv-counts-2" class="section level4">
-<h4>indiv counts</h4>
+<div id="top-50-indiv-counts-1" class="section level3">
+<h3>top 50 indiv counts</h3>
 <pre class="r"><code>colCond &lt;- c(&quot;#213782&quot;,&quot;grey&quot;,&quot;#822145&quot;)
 names(colCond) &lt;- c(&quot;BMP4&quot;,&quot;ctr&quot;,&quot;HGF&quot;)
 
@@ -3677,7 +3680,45 @@ for(ID in topGenesID){
              col=colCond[factor(dds$stim)],
              pch = 19)
 }</code></pre>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-2.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-3.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-4.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-5.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-6.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-7.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-8.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-9.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-10.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-11.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-12.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-13.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-14.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-15.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-16.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-17.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-18.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-19.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-20.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-21.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-22.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-23.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-24.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-25.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-26.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-27.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-28.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-29.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-30.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-31.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-32.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-33.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-34.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-35.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-36.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-37.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-38.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-39.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-40.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-41.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-42.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-43.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-44.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-45.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-46.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-47.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-48.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-49.png" width="576" style="display: block; margin: auto;" /><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-8-50.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-50-heatmap-1" class="section level3">
+<h3>top 50 heatmap</h3>
+<pre class="r"><code>topGenes &lt;- head(order(res$padj),50)
+#topGenes &lt;- resDat$ensembl_gene_id[which(resDat$padj &lt; 0.01)]
+
+mat  &lt;- assay(rld)[ topGenes, ]
+namesDat &lt;- data.frame(ensembl_gene_id = rownames(mat)) %&gt;%
+  left_join(., G_list, by= &quot;ensembl_gene_id&quot;)
+
+# Define annotation colors
+ann_colors &lt;- list(
+  stim = colCond,
+  pc = colpc)
+
+anno &lt;- as.data.frame(colData(rld)[, c(&quot;stim&quot;, &quot;pc&quot;)])
+
+# custom heatmap colors
+heat_colors &lt;- colorRampPalette(c(&quot;#2166AC&quot;, &quot;#F7F7F7&quot;, &quot;#B2182B&quot;))(50)
+
+pheatmap(mat, annotation_col = anno, annotation_colors = ann_colors, scale = &quot;row&quot;,
+         labels_row = namesDat$hgnc_symbol, color = heat_colors)</code></pre>
+<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="vulcano-1" class="section level3">
+<h3>vulcano</h3>
+<pre class="r"><code>res$symbol &lt;- resDat$hgnc_symbol
+EnhancedVolcano(res,
+    lab = res$symbol,
+    x = &#39;log2FoldChange&#39;,
+    y = &#39;pvalue&#39;,
+    xlim = c(-10, 10),
+    #ylim = c(0,50),
+    pCutoff = 10e-05,
+    FCcutoff = 1,
+    title = &quot;DeSEQ2 results&quot;,
+    subtitle = bquote(italic(&quot;HGF vs ctr&quot;)))</code></pre>
+<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-1.png" width="1248" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-1">
 Past versions of unnamed-chunk-10-1.png
@@ -3713,1979 +3754,6 @@ angeldemartin
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-2.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-2">
-Past versions of unnamed-chunk-10-2.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-2.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-3.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-3">
-Past versions of unnamed-chunk-10-3.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-3" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-3.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-4.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-4">
-Past versions of unnamed-chunk-10-4.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-4" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-4.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-5.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-5">
-Past versions of unnamed-chunk-10-5.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-5" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-5.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-6.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-6">
-Past versions of unnamed-chunk-10-6.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-6" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-6.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-7.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-7">
-Past versions of unnamed-chunk-10-7.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-7" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-7.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-8.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-8">
-Past versions of unnamed-chunk-10-8.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-8" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-8.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-9.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-9">
-Past versions of unnamed-chunk-10-9.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-9" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-9.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-10.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-10">
-Past versions of unnamed-chunk-10-10.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-10" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-10.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-11.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-11">
-Past versions of unnamed-chunk-10-11.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-11" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-11.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-12.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-12">
-Past versions of unnamed-chunk-10-12.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-12" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-12.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-13.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-13">
-Past versions of unnamed-chunk-10-13.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-13" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-13.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-14.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-14">
-Past versions of unnamed-chunk-10-14.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-14" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-14.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-15.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-15">
-Past versions of unnamed-chunk-10-15.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-15" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-15.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-16.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-16">
-Past versions of unnamed-chunk-10-16.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-16" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-16.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-17.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-17">
-Past versions of unnamed-chunk-10-17.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-17" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-17.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-18.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-18">
-Past versions of unnamed-chunk-10-18.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-18" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-18.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-19.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-19">
-Past versions of unnamed-chunk-10-19.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-19" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-19.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-20.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-20">
-Past versions of unnamed-chunk-10-20.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-20" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-20.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-21.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-21">
-Past versions of unnamed-chunk-10-21.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-21" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-21.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-22.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-22">
-Past versions of unnamed-chunk-10-22.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-22" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-22.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-23.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-23">
-Past versions of unnamed-chunk-10-23.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-23" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-23.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-24.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-24">
-Past versions of unnamed-chunk-10-24.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-24" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-24.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-25.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-25">
-Past versions of unnamed-chunk-10-25.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-25" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-25.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-26.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-26">
-Past versions of unnamed-chunk-10-26.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-26" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-26.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-27.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-27">
-Past versions of unnamed-chunk-10-27.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-27" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-27.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-28.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-28">
-Past versions of unnamed-chunk-10-28.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-28" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-28.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-29.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-29">
-Past versions of unnamed-chunk-10-29.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-29" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-29.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-30.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-30">
-Past versions of unnamed-chunk-10-30.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-30" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-30.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-31.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-31">
-Past versions of unnamed-chunk-10-31.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-31" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-31.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-32.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-32">
-Past versions of unnamed-chunk-10-32.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-32" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-32.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-33.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-33">
-Past versions of unnamed-chunk-10-33.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-33" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-33.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-34.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-34">
-Past versions of unnamed-chunk-10-34.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-34" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-34.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-35.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-35">
-Past versions of unnamed-chunk-10-35.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-35" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-35.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-36.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-36">
-Past versions of unnamed-chunk-10-36.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-36" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-36.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-37.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-37">
-Past versions of unnamed-chunk-10-37.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-37" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-37.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-38.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-38">
-Past versions of unnamed-chunk-10-38.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-38" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-38.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-39.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-39">
-Past versions of unnamed-chunk-10-39.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-39" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-39.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-40.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-40">
-Past versions of unnamed-chunk-10-40.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-40" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-40.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-41.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-41">
-Past versions of unnamed-chunk-10-41.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-41" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-41.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-42.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-42">
-Past versions of unnamed-chunk-10-42.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-42" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-42.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-43.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-43">
-Past versions of unnamed-chunk-10-43.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-43" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-43.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-44.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-44">
-Past versions of unnamed-chunk-10-44.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-44" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-44.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-45.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-45">
-Past versions of unnamed-chunk-10-45.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-45" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-45.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-46.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-46">
-Past versions of unnamed-chunk-10-46.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-46" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-46.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-47.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-47">
-Past versions of unnamed-chunk-10-47.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-47" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-47.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-48.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-48">
-Past versions of unnamed-chunk-10-48.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-48" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-48.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-49.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-49">
-Past versions of unnamed-chunk-10-49.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-49" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-49.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-10-50.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-10-50">
-Past versions of unnamed-chunk-10-50.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-10-50" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-10-50.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>####heatmap</p>
-<pre class="r"><code>topGenes &lt;- head(order(res$padj),50)
-#topGenes &lt;- resDat$ensembl_gene_id[which(resDat$padj &lt; 0.01)]
-
-mat  &lt;- assay(rld)[ topGenes, ]
-namesDat &lt;- data.frame(ensembl_gene_id = rownames(mat)) %&gt;%
-  left_join(., G_list, by= &quot;ensembl_gene_id&quot;)
-
-# Define annotation colors
-ann_colors &lt;- list(
-  stim = colCond,
-  pc = colpc)
-
-anno &lt;- as.data.frame(colData(rld)[, c(&quot;stim&quot;, &quot;pc&quot;)])
-
-# custom heatmap colors
-heat_colors &lt;- colorRampPalette(c(&quot;#2166AC&quot;, &quot;#F7F7F7&quot;, &quot;#B2182B&quot;))(50)
-
-pheatmap(mat, annotation_col = anno, annotation_colors = ann_colors, scale = &quot;row&quot;,
-         labels_row = namesDat$hgnc_symbol, color = heat_colors)</code></pre>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-11-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-11-1">
-Past versions of unnamed-chunk-11-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-11-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-11-1.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="vulcano-1" class="section level4">
-<h4>vulcano</h4>
-<pre class="r"><code>res$symbol &lt;- resDat$hgnc_symbol
-EnhancedVolcano(res,
-    lab = res$symbol,
-    x = &#39;log2FoldChange&#39;,
-    y = &#39;pvalue&#39;,
-    xlim = c(-10, 10),
-    #ylim = c(0,50),
-    pCutoff = 10e-05,
-    FCcutoff = 1,
-    title = &quot;DeSEQ2 results&quot;,
-    subtitle = bquote(italic(&quot;HGF vs ctr&quot;)))</code></pre>
-<p><img src="figure/bulk_analysis2.Rmd/unnamed-chunk-12-1.png" width="1248" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
-Past versions of unnamed-chunk-12-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-12-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/angeldemartin/NC_HTx_01/blob/b4c63e7c412a08c8b3dc4bccc0498c6119eb56ab/docs/figure/bulk_analysis2.Rmd/unnamed-chunk-12-1.png" target="_blank">b4c63e7</a>
-</td>
-<td>
-angeldemartin
-</td>
-<td>
-2025-06-10
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -5749,36 +3817,36 @@ loaded via a namespace (and not attached):
  [67] BiocManager_1.30.25      fastmap_1.2.0            digest_0.6.37           
  [70] gridGraphics_0.5-1       timechange_0.3.0         R6_2.6.1                
  [73] colorspace_2.1-1         GO.db_3.19.1             RSQLite_2.3.11          
- [76] R.methodsS3_1.8.2        hexbin_1.28.5            generics_0.1.4          
- [79] data.table_1.17.2        rtracklayer_1.64.0       graphlayouts_1.2.2      
- [82] prettyunits_1.2.0        httr_1.4.7               S4Arrays_1.4.1          
- [85] scatterpie_0.2.4         whisker_0.4.1            pkgconfig_2.0.3         
- [88] gtable_0.3.6             blob_1.2.4               workflowr_1.7.1         
- [91] XVector_0.44.0           shadowtext_0.1.4         htmltools_0.5.8.1       
- [94] carData_3.0-5            fgsea_1.30.0             msigdbdf_24.1.1         
- [97] ProtGenerics_1.36.0      scales_1.4.0             png_0.1-8               
-[100] ggfun_0.1.8              knitr_1.50               rstudioapi_0.17.1       
-[103] tzdb_0.5.0               reshape2_1.4.4           rjson_0.2.23            
-[106] nlme_3.1-168             curl_6.2.2               cachem_1.1.0            
-[109] BiocVersion_3.19.1       parallel_4.4.0           AnnotationDbi_1.66.0    
-[112] restfulr_0.0.15          pillar_1.10.2            grid_4.4.0              
-[115] vctrs_0.6.5              promises_1.3.2           car_3.1-3               
-[118] dbplyr_2.5.0             tximport_1.32.0          evaluate_1.0.3          
-[121] GenomicFeatures_1.56.0   cli_3.6.5                locfit_1.5-9.12         
-[124] compiler_4.4.0           Rsamtools_2.20.0         rlang_1.1.6             
-[127] crayon_1.5.3             ggsignif_0.6.4           labeling_0.4.3          
-[130] affy_1.82.0              plyr_1.8.9               fs_1.6.6                
-[133] stringi_1.8.7            viridisLite_0.4.2        BiocParallel_1.38.0     
-[136] assertthat_0.2.1         babelgene_22.9           txdbmaker_1.0.1         
-[139] Biostrings_2.72.1        lazyeval_0.2.2           GOSemSim_2.30.2         
-[142] Matrix_1.7-3             patchwork_1.3.0          hms_1.1.3               
-[145] bit64_4.6.0-1            KEGGREST_1.44.1          statmod_1.5.0           
-[148] AnnotationHub_3.12.0     broom_1.0.8              igraph_2.1.4            
-[151] memoise_2.0.1            affyio_1.74.0            bslib_0.9.0             
-[154] ggtree_3.12.0            fastmatch_1.1-6          bit_4.6.0               
-[157] gson_0.1.0               ape_5.8-1               </code></pre>
+ [76] R.methodsS3_1.8.2        utf8_1.2.5               hexbin_1.28.5           
+ [79] generics_0.1.4           data.table_1.17.2        rtracklayer_1.64.0      
+ [82] graphlayouts_1.2.2       prettyunits_1.2.0        httr_1.4.7              
+ [85] S4Arrays_1.4.1           scatterpie_0.2.4         whisker_0.4.1           
+ [88] pkgconfig_2.0.3          gtable_0.3.6             blob_1.2.4              
+ [91] workflowr_1.7.1          XVector_0.44.0           shadowtext_0.1.4        
+ [94] htmltools_0.5.8.1        carData_3.0-5            fgsea_1.30.0            
+ [97] msigdbdf_24.1.1          ProtGenerics_1.36.0      scales_1.4.0            
+[100] png_0.1-8                ggfun_0.1.8              knitr_1.50              
+[103] rstudioapi_0.17.1        tzdb_0.5.0               reshape2_1.4.4          
+[106] rjson_0.2.23             nlme_3.1-168             curl_6.2.2              
+[109] cachem_1.1.0             BiocVersion_3.19.1       parallel_4.4.0          
+[112] AnnotationDbi_1.66.0     restfulr_0.0.15          pillar_1.10.2           
+[115] grid_4.4.0               vctrs_0.6.5              promises_1.3.2          
+[118] car_3.1-3                dbplyr_2.5.0             tximport_1.32.0         
+[121] evaluate_1.0.3           GenomicFeatures_1.56.0   cli_3.6.5               
+[124] locfit_1.5-9.12          compiler_4.4.0           Rsamtools_2.20.0        
+[127] rlang_1.1.6              crayon_1.5.3             ggsignif_0.6.4          
+[130] labeling_0.4.3           affy_1.82.0              plyr_1.8.9              
+[133] fs_1.6.6                 stringi_1.8.7            viridisLite_0.4.2       
+[136] BiocParallel_1.38.0      assertthat_0.2.1         babelgene_22.9          
+[139] txdbmaker_1.0.1          Biostrings_2.72.1        lazyeval_0.2.2          
+[142] GOSemSim_2.30.2          Matrix_1.7-3             patchwork_1.3.0         
+[145] hms_1.1.3                bit64_4.6.0-1            KEGGREST_1.44.1         
+[148] statmod_1.5.0            AnnotationHub_3.12.0     broom_1.0.8             
+[151] igraph_2.1.4             memoise_2.0.1            affyio_1.74.0           
+[154] bslib_0.9.0              ggtree_3.12.0            fastmatch_1.1-6         
+[157] bit_4.6.0                gson_0.1.0               ape_5.8-1               </code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>[1] &quot;Tue Jun 10 14:37:48 2025&quot;</code></pre>
+<pre><code>[1] &quot;Tue Jun 10 14:55:29 2025&quot;</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -5844,34 +3912,34 @@ loaded via a namespace (and not attached):
  [67] BiocManager_1.30.25      fastmap_1.2.0            digest_0.6.37           
  [70] gridGraphics_0.5-1       timechange_0.3.0         R6_2.6.1                
  [73] colorspace_2.1-1         GO.db_3.19.1             RSQLite_2.3.11          
- [76] R.methodsS3_1.8.2        hexbin_1.28.5            generics_0.1.4          
- [79] data.table_1.17.2        rtracklayer_1.64.0       graphlayouts_1.2.2      
- [82] prettyunits_1.2.0        httr_1.4.7               S4Arrays_1.4.1          
- [85] scatterpie_0.2.4         whisker_0.4.1            pkgconfig_2.0.3         
- [88] gtable_0.3.6             blob_1.2.4               workflowr_1.7.1         
- [91] XVector_0.44.0           shadowtext_0.1.4         htmltools_0.5.8.1       
- [94] carData_3.0-5            fgsea_1.30.0             msigdbdf_24.1.1         
- [97] ProtGenerics_1.36.0      scales_1.4.0             png_0.1-8               
-[100] ggfun_0.1.8              knitr_1.50               rstudioapi_0.17.1       
-[103] tzdb_0.5.0               reshape2_1.4.4           rjson_0.2.23            
-[106] nlme_3.1-168             curl_6.2.2               cachem_1.1.0            
-[109] BiocVersion_3.19.1       parallel_4.4.0           AnnotationDbi_1.66.0    
-[112] restfulr_0.0.15          pillar_1.10.2            grid_4.4.0              
-[115] vctrs_0.6.5              promises_1.3.2           car_3.1-3               
-[118] dbplyr_2.5.0             tximport_1.32.0          evaluate_1.0.3          
-[121] GenomicFeatures_1.56.0   cli_3.6.5                locfit_1.5-9.12         
-[124] compiler_4.4.0           Rsamtools_2.20.0         rlang_1.1.6             
-[127] crayon_1.5.3             ggsignif_0.6.4           labeling_0.4.3          
-[130] affy_1.82.0              plyr_1.8.9               fs_1.6.6                
-[133] stringi_1.8.7            viridisLite_0.4.2        BiocParallel_1.38.0     
-[136] assertthat_0.2.1         babelgene_22.9           txdbmaker_1.0.1         
-[139] Biostrings_2.72.1        lazyeval_0.2.2           GOSemSim_2.30.2         
-[142] Matrix_1.7-3             patchwork_1.3.0          hms_1.1.3               
-[145] bit64_4.6.0-1            KEGGREST_1.44.1          statmod_1.5.0           
-[148] AnnotationHub_3.12.0     broom_1.0.8              igraph_2.1.4            
-[151] memoise_2.0.1            affyio_1.74.0            bslib_0.9.0             
-[154] ggtree_3.12.0            fastmatch_1.1-6          bit_4.6.0               
-[157] gson_0.1.0               ape_5.8-1               </code></pre>
+ [76] R.methodsS3_1.8.2        utf8_1.2.5               hexbin_1.28.5           
+ [79] generics_0.1.4           data.table_1.17.2        rtracklayer_1.64.0      
+ [82] graphlayouts_1.2.2       prettyunits_1.2.0        httr_1.4.7              
+ [85] S4Arrays_1.4.1           scatterpie_0.2.4         whisker_0.4.1           
+ [88] pkgconfig_2.0.3          gtable_0.3.6             blob_1.2.4              
+ [91] workflowr_1.7.1          XVector_0.44.0           shadowtext_0.1.4        
+ [94] htmltools_0.5.8.1        carData_3.0-5            fgsea_1.30.0            
+ [97] msigdbdf_24.1.1          ProtGenerics_1.36.0      scales_1.4.0            
+[100] png_0.1-8                ggfun_0.1.8              knitr_1.50              
+[103] rstudioapi_0.17.1        tzdb_0.5.0               reshape2_1.4.4          
+[106] rjson_0.2.23             nlme_3.1-168             curl_6.2.2              
+[109] cachem_1.1.0             BiocVersion_3.19.1       parallel_4.4.0          
+[112] AnnotationDbi_1.66.0     restfulr_0.0.15          pillar_1.10.2           
+[115] grid_4.4.0               vctrs_0.6.5              promises_1.3.2          
+[118] car_3.1-3                dbplyr_2.5.0             tximport_1.32.0         
+[121] evaluate_1.0.3           GenomicFeatures_1.56.0   cli_3.6.5               
+[124] locfit_1.5-9.12          compiler_4.4.0           Rsamtools_2.20.0        
+[127] rlang_1.1.6              crayon_1.5.3             ggsignif_0.6.4          
+[130] labeling_0.4.3           affy_1.82.0              plyr_1.8.9              
+[133] fs_1.6.6                 stringi_1.8.7            viridisLite_0.4.2       
+[136] BiocParallel_1.38.0      assertthat_0.2.1         babelgene_22.9          
+[139] txdbmaker_1.0.1          Biostrings_2.72.1        lazyeval_0.2.2          
+[142] GOSemSim_2.30.2          Matrix_1.7-3             patchwork_1.3.0         
+[145] hms_1.1.3                bit64_4.6.0-1            KEGGREST_1.44.1         
+[148] statmod_1.5.0            AnnotationHub_3.12.0     broom_1.0.8             
+[151] igraph_2.1.4             memoise_2.0.1            affyio_1.74.0           
+[154] bslib_0.9.0              ggtree_3.12.0            fastmatch_1.1-6         
+[157] bit_4.6.0                gson_0.1.0               ape_5.8-1               </code></pre>
 </div>
 </div>
 </div>
